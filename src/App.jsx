@@ -13,13 +13,12 @@ const calculateTotalLikes = (entries) => {
 };
 
 const App = () => {
-  // add toggleLiked event handler
-  // register entries as state variable, loop through entries, to find matching id, toggle liked status;
+  // register state variables
   const [entries, setEntries] = useState(ENTRIES);
   const [senderAColor, setSenderAColor] = useState('');
   const [senderBColor, setSenderBColor] = useState('');
   const totalLikes = calculateTotalLikes(entries);
-
+  // add toggleLiked event handler call back
   const toggleLiked = (id) => {
     setEntries(entries.map((entry) => {
       if (entry.id === id) {
@@ -29,8 +28,9 @@ const App = () => {
       }
     }));
   };
+
   const setColorCallBack = (sender, color) => {
-    console.log(sender);
+    // console.log(sender);
     if (sender === senderA) {
       setSenderAColor(color);
       // console.log(senderAColor);
@@ -38,8 +38,6 @@ const App = () => {
       setSenderBColor(color);
       // console.log(senderBColor);
     };
-    console.log(senderAColor);
-    console.log(senderBColor);
   };
 
   return (

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { senderA } from '../data/senders';
 
 // map each message to a chat entry component
-
 const ChatLog = (props) => {
   const chatLogComponent = props.entries.map((entry) => {
     const senderColor = entry.sender === senderA ? props.senderAColor: props.senderBColor;
