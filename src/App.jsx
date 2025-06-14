@@ -32,7 +32,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat Between {senderA} and {senderB}</h1>
-        <p>{totalLikes}❤️s</p>
+        <p>{totalLikes} ❤️s</p>
       </header>
       <main>
         <ChatLog
