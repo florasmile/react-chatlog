@@ -13,7 +13,7 @@ const ChatEntry = (props) => {
     <div className={chatEntryClass}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
+        <p className={props.senderColor}>{props.body}</p>
         <p className="entry-time">{timeComponent}</p>
         <button className="like" onClick={() => props.onToggleLiked(props.id)}>{heart}</button>
       </section>
@@ -27,6 +27,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
+  senderColor: PropTypes.string,
   onToggleLiked: PropTypes.func.isRequired,
 };
 

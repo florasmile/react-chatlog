@@ -1,10 +1,12 @@
 import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
+import { senderA } from '../data/senders';
 
 // map each message to a chat entry component
 
 const ChatLog = (props) => {
   const chatLogComponent = props.entries.map((entry) => {
+    const senderColor = entry.sender === senderA ? props.senderAColor: props.senderBColor;
     return <ChatEntry
       key={entry.id}
       id={entry.id}
@@ -12,6 +14,7 @@ const ChatLog = (props) => {
       body={entry.body}
       timeStamp={entry.timeStamp}
       liked={entry.liked}
+      senderColor={senderColor}
       onToggleLiked={props.onToggleLiked}
     />;
   });
@@ -30,6 +33,8 @@ ChatLog.propTypes = {
     timeStamp: PropTypes.string.isRequired,
     liked: PropTypes.bool.isRequired,
   })).isRequired,
+  senderAColor: PropTypes.string,
+  senderBColor: PropTypes.string,
   onToggleLiked: PropTypes.func.isRequired,
 };
 
