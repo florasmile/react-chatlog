@@ -1,13 +1,16 @@
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
+import { senderA } from '../data/senders';
 
 const ChatEntry = (props) => {
   const timeComponent = <TimeStamp time={props.timeStamp} />;
   const heart = props.liked ? '❤️':'🤍';
-
+  // ternary operator to decide which css class to add depending on the sender
+  const chatPosition = props.sender === senderA ? 'local': 'remote';
+  const chatEntryClass = `chat-entry ${chatPosition}`;
   return (
-    <div className="chat-entry local">
+    <div className={chatEntryClass}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
