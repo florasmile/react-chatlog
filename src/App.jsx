@@ -45,7 +45,12 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chat Between {senderA} and {senderB}</h1>
+        <h1>
+          Chat Between {' '}
+          <span className={senderAColor}>{senderA}</span>{' '}
+          and {' '}
+          <span className={senderBColor}>{senderB}</span>
+        </h1>
         <section className="widget">
           <ColorChoice sender={senderA} onSetColor={setColorCallBack} />
           <span id="heartWidget">{totalLikes} ❤️s</span>
