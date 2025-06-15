@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "test": "vitest --run",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b deployed-version"
+    "deploy": "gh-pages -d dist -b deployed-version"
   },
   "dependencies": {
     "luxon": "^2.5.2",
