@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // Use relative paths
+  base: './react-chatlog/', // Use relative paths
   test: {
     // jest config here
     reporters: ['verbose'],
