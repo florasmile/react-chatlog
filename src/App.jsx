@@ -6,11 +6,7 @@ import { senderA, senderB } from './data/senders';
 import ColorChoice from './components/ColorChoice';
 
 // define function to calculate total likes
-const calculateTotalLikes = (entries) => {
-  return entries.reduce((total, entry) => {
-    return entry.liked? total+1 : total;
-  }, 0);
-};
+const calculateTotalLikes = (entries) => entries.reduce((total, entry) => entry.liked? total+1 : total, 0);
 
 const App = () => {
   // register state variables
